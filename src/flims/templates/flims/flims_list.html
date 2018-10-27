@@ -1,0 +1,48 @@
+{% extends 'base1.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="section section-bg-5 section-cover pt-11 pb-11">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="text-center mb-7">
+					<h3 class="sub-title primary-color">Our Best Films</h3>
+					<h2 class="section-title mb-2">Featured Films</h2>
+					<p>Have a look at our best films which are high in quality and receive positive responses <br />from audience. You are gonna have these great films as well.</p>
+				</div>
+			</div>
+		</div>
+		{% for object in object_list %}
+			<div class="col">
+				<div class="col-md-4 col-sm-6 film-masonry-item masonry-item anthology-film serial-film">
+					<div class="film-masonry-item-inner">
+						<div class="thumb">
+							<a href="{{ object.get_absolute.url }}">
+								<img src="{{ object.get_image_url }}" alt=" {{object.title}}" style="height:200px;"/>
+							</a>
+						</div>
+						<div class="info">
+							<div class="title text-center">
+							<a href="{{ object.get_absolute_url }}"> {{ object.title }} </a>
+							</div>
+							<div class="category">
+								<a href="#">{{ object.category }}</a>
+								<a href="#"></a>
+							</div>
+							<div class="meta">
+								<span class="view">176 Views</span>
+								<span class="comment">0 Comment</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+{% endblock %}

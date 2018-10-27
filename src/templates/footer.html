@@ -1,0 +1,85 @@
+
+{% url 'home' as home_url %}
+{% load staticfiles %}
+
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="{{ home_url }}" id="footer_logo">
+					<img class="footer-logo-image" src="{% static 'images/logo2.svg' %}" alt="Nine Studio" style="height: 157px; width: 100px;"/>
+				</a>
+				<div class="footer-social">
+					<a data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+					<a data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter" href="#"><i class="fab fa-twitter"></i></a>
+					<a data-toggle="tooltip" data-placement="top" title="" data-original-title="Youtube" href="#"><i class="fab fa-youtube"></i></a>
+					<a data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram" href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="widget">
+					<h3 class="widget-title">Our Services</h3>
+					<ul>
+						<li><a href="#">Equipment Hire</a></li>
+						<li><a href="#">Filmming Services</a></li>
+						
+						<li><a href="#">Flexibe Office Space</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="widget">
+					<h3 class="widget-title">Quick Links</h3>
+					<ul>
+					<li><a href="#">My Account</a></li>
+						<li><a href="#">View Order</a></li>
+						<li><a href="#">About Us</a></li>
+
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="widget">
+					<h3 class="widget-title">Conect With Us</h3>
+					<div class="textwidget">
+						<p>A: 14 L.E Goulburn St, Berlin 2000Wm</p>
+							<p>P: (+88) 1990 6886</p>
+							<p>E: <a href="mailto:contact@9studio.com">contact@9studio.com</a></p>
+					</div>
+					<div class="footer-gmap">
+						<a href="#gmap-popup" class="open-popup-link">Google Map</a>
+						<div id="gmap-popup" class="mfp-hide">
+							<iframe id="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0554760559626!2d151.42366529037852!3d-32.80714560754794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b73360bf7441cf9%3A0x7d18a93f0244f271!2s14+Goulburn+St%2C+Abermain+NSW+2326%2C+Australia!5e0!3m2!1sen!2s!4v1482743874873" width="600" height="450" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="copyright">
+	<div class="container">
+		<div class="row">
+			<div class="copyright-container">
+				<div class="col-md-6 p-0">
+					<div class="copyright-left">
+						Copyright © 2018 <a href="#">WahileProductions</a> - All Rights Reserved.
+					</div>
+				</div>
+				<div class="col-md-6 p-0">
+					<div class="copyright-right">
+						<ul>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Term And Conditions</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="md-overlay"></div><!-- the overlay element -->
+<a class="backtotop" id="backtotop"><i class="ion-android-arrow-up"></i></a>

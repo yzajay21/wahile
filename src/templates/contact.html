@@ -1,0 +1,106 @@
+{% extends 'base1.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+					<div class="section page-title">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="text-center-sm">
+									<h1 class="title">Contact Us</h1>
+									<div class="breadcrumbs">
+										<ul>
+											<li><a href="{% url 'home' %}">Home</a></li>
+											<li>Contact</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section pt-12 mb-10">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="contact-info">
+									<div class="icon-boxes">
+										<div class="icon-boxes-inner">
+											<h5 class="icon-boxes-title"> Address</h5>
+											<div class="icon-boxes-content">
+												1800 Abbot Kinney Blvd. Unit D &amp; E<br /> Venice, CA 90291
+											</div>
+										</div>
+									</div>
+									<div class="icon-boxes">
+										<div class="icon-boxes-inner">
+											<h5 class="icon-boxes-title"> Phone</h5>
+											<div class="icon-boxes-content">
+												Mobile: (+88) – 1990 – 6886<br /> Hotline: 1800 – 1102
+											</div>
+										</div>
+									</div>
+									<div class="icon-boxes">
+										<div class="icon-boxes-inner">
+											<h5 class="icon-boxes-title"> Email</h5>
+											<div class="icon-boxes-content">
+												support@9studio.com<br /> contact@9studio.com
+											</div>
+										</div>
+									</div>
+									<ul class="film-social">
+										<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#" target="_blank"><i class="fab fa-vine"></i></a></li>
+										<li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-9">
+								<h3 class="section-title bottom-line mb-5">Get In Touch</h3>
+								<form method="post" class="contact-form">{% csrf_token %}
+									{{ form.as_p }}
+									<div class="row">
+										<div class="col-md-12">
+											<input type="submit" value="SEND US NOW" class="button" />
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div id="googleMap" class="mb-6" data-icon="images/icon_location.png" data-lat="37.789133" data-lon="-122.402158"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section section-bg-3 section-cover footer-newsletter style-1 pt-11 pb-8">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-1">&nbsp;</div>
+							<div class="col-md-4">
+								<div class="footer-newsletter-left">Subscribe to our Newsletter</div>
+							</div>
+							<div class="col-md-6">
+								<div class="footer-newsletter-right">
+									<form method="post">
+										<div class="form-fields">
+											<div class="form">
+												<input type="email" name="email" placeholder="Enter your e-mail" /> 
+												<input type="submit" value="Submit" />
+											</div>
+											<p class="note">Note* : Spectators are our passion. Creation is our core.</p>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+{% endblock %}

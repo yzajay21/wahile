@@ -1,0 +1,149 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% load markdown_deux_tags %}
+{% load thumbnail %}
+{% block content %}
+	<div id="main">
+		<div class="section page-title">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="text-center-sm">
+							<h1 class="title">Our <span>Projects</span></h1>
+							<div class="breadcrumbs">
+								<h1 class="text-center mt-10" style="color: red; font-family: Pacifico;">{{ object.title }}</h1>
+
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section pt-7 pb-7">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="film-detail-video">
+							{% video object.video as my_video %}
+								<img src="{{ posts.thumbnail }}" width="{{ im.width }}" height="{{ im.height }}">
+								{% video my_video  %}
+							{% endvideo %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section pb-7">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="film-detail-title">
+							<h3 class="section-title">{{ object.title }}</h3>
+							<div class="category">
+								<a href="#">Anthology Film</a>
+								<a href="#">Short Film</a>
+							</div>
+							<div class="meta">
+								<span class="view">265 Views</span>
+								<span class="like">
+									<a href="#" class="like-btn">5 Likes</a>
+								</span>
+								<span class="comment">0 Comment</span>
+							</div>
+						</div>
+						<div class="film-detail-content">
+							<p>
+								{{ object.description|markdown }}
+							</p>
+							<div class="image">
+												{% if object.get_image_url %}
+													<a href="{{ object.get_absolute_url }}"><img class="img-fluid rounded"  src="{{ object.get_image_url }}" alt="{{ flims.title}}" ></a><hr/>
+												{% endif %}
+											</div>
+						</div>
+						<div class="film-button">
+							<i class="ion-arrow-right-c"></i> <a href="{% url 'contact' %}" target="_self">Hire Us Now</a>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="film-detail-info">
+							<div class="info-item">
+								<div class="info-item-inner">
+									<div class="title">Production</div>
+									<div class="content">
+											Fear the Grizzly Georg-Simon-Ohm University
+									</div>
+								</div>
+							</div>
+							<div class="info-item">
+								<div class="info-item-inner">
+									<div class="title">Actor</div>
+									<div class="content">
+										{{ object.actor }}
+									</div>
+								</div>
+							</div>
+							<div class="info-item">
+								<div class="info-item-inner">
+									<div class="title">Client</div>
+									<div class="content">{{ object.client }}</div>
+								</div>
+							</div>
+							<div class="info-item">
+								<div class="info-item-inner">
+									<div class="title">Director</div>
+									<div class="content">{{ object.director }}</div>
+								</div>
+							</div>
+							<div class="info-item">
+								<div class="info-item-inner">
+									<div class="title">Assistant Camera</div>
+									<div class="content">{{ object.assistant_camera }}</div>
+								</div>
+							</div>
+							<div class="info-item">
+								<div class="info-item-inner">
+									<div class="title">Model</div>
+									<div class="content">Spitzbart Filmtechnik Beimann Cineastic Cinegate</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section bg-light pt-7 pb-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h3 class="section-title fz-24 fw-bolder bottom-line"> Related Projects</h3>
+						<div class="relate-film-carousel row mt-5" data-auto-play="true" 
+							data-desktop="4" data-laptop="3" data-tablet="3" data-mobile="2">
+							{% for object in films %}
+								<div class="item">
+									<div class="item-inner">
+										<div class="thumb">
+											{% if object.get_image_url %}
+												<a href="film-detail.html">
+													<img src="{{ object.get_image_url }}" alt="" style="width:480; height:300;"/>
+												</a>
+											{% endif %}
+										</div>
+										<div class="info">
+											<div class="title text-center">
+												<a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

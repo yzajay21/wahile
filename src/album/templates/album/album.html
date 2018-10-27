@@ -1,0 +1,33 @@
+{% extends 'base1.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<div class="section section-bg-2 pt-10 pb-10">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 p-0">
+					<div class="text-center">
+						<h3 class="sub-title primary-color"> Our Photos</h3>
+						<h2 class="section-title white mb-2">Photo Gallery</h2>
+						<p class="gray mb-7">This is our gallery where we show photos of our studio, our people as well as our <br />production process. Have a look and you will better understand us</p>
+					</div>
+					
+					<div class="film-gallery-carousel" id="film-gallery-carousel">
+					{% for photo in photos %}
+						<div class="film-gallery-carousel-item">
+							<div class="film-gallery-carousel-item-inner">
+								{% if photo.image %}
+									<img src='{{ photo.image.url }}' alt="technofresh" class="img-responsive"/>
+								{% endif %}
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% url 'home' as home_url %}
+{% url 'about' as about %}
+{% url 'flims:list' as list_url %}
+{% url 'contact' as contact %}
+{% url 'newsletter:signup' as 'newsletter_signup' %}
+	{% load staticfiles %}
+	<div id="menu-slideout" class="slideout-menu hidden-md-up">
+		<div class="mobile-menu">
+			<ul id="mobile-menu" class="menu">
+				<li class="dropdown">
+					<a href="{{ home_url }}">Home</a>
+						
+				</li>
+				<li class="dropdown">
+					<a href="{{ about }}">About Us</a>
+					<i class="sub-menu-toggle fa fa-angle-down"></i>
+					<ul class="sub-menu">
+						<li><a href="{{ signup }}">About 01</a></li>
+						<li><a href="about-2.html">About 02</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="{{ list_url }}">Our Films</a>
+				</li>
+				
+				<li>
+					<a href="{{ contact }}">Contact Us</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="top-search">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<form>
+						<input type="search" class="top-search-input" name="s" placeholder="What are you looking for?" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site">
+		<header id="header" class="header header-desktop header-overlay header-1">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3 p-0">
+						<div class="header-left">
+							<a href="{{ home_url }}" id="branding_logo">
+								<img class="logo" src="{% static 'images/logo2.svg' %}" alt="Logo" title="Nine Studio" />
+								<img class="logo-alt" src="{% static 'images/logo2.svg' %}" alt="Logo" title="wahile production " style="width:100%; height: 100px; top-margin:-10px;" >
+							</a>
+						</div>
+					</div>
+					<div class="col-md-9 p-0">
+						<div class="header-right">
+							<nav id="menu" class="menu menu-primary">
+								<ul>
+									<li class="dropdown active">
+										<a href="{{ home_url }}">Home</a>
+										
+									</li>
+									<li class="dropdown">
+										<a href="{{ about}}">About Us</a>
+										
+										<ul class="sub-menu">
+											<li><a href="{% url 'newsletter:newsletter_signup' %}">Newsletter Subscribe</a></li>
+											<li><a href="{% url 'newsletter:newsletter_unsubscribe' %}">Newsletter Unsubscribe</a></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a href="{{ list_url }}">Our Films</a>
+									</li>
+									
+									<li>
+										<a href="{{ contact }}">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+							<!--<div id="open-search" class="open-search top-search-btn">
+								<i class="ion-ios-search-strong"></i>
+							</div>-->
+						</div>
+					</div>
+				</div>	
+			</div>
+		</header>
+		<header class="header header-mobile">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-2">
+						<div class="header-left">
+							<div id="open-left"><i class="ion-navicon"></i></div>
+						</div>
+					</div>
+					<div class="col-xs-8">
+						<div class="header-center">
+							<a href="index.html" id="logo-2">
+								<img class="logo-image" src="{% static 'images/logo_alt.png' %}" alt="Nine Studio Logo" />
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="header-right">
+							<div id="open-search-2" class="open-search top-search-btn">
+								<i class="ion-ios-search-strong"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
